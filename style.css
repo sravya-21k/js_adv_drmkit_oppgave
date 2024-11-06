@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url("/images/darkk-view-rays-166369563.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+#container {
+  position: relative;
+  width: 600px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  text-align: center;
+  color: aliceblue;
+  margin-bottom: 20px;
+}
+
+.drum-button {
+  background: rgba(219, 127, 88, 0.7);
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0-2s;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.drum-button:hover {
+  background: #ffcc00;
+  transform: scale(1.05);
+}
