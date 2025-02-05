@@ -5,39 +5,99 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-image: url("./images/background.png");
+  background: linear-gradient(135deg, #00b0ff, #ff00c8);
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
+  font-family: "Arial", sans-serif;
+  overflow: hidden;
+  /* background-image: url("./images/background.png");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   height: 100vh;
 }
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 #container {
   position: relative;
-  width: 600px;
-  height: 500px;
+  width: 70vw;
+  height: 70vh;
+  max-width: 800px;
+  max-width: 700px;
+  /* width: 600px;
+  height: 500px; */
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  overflow: hidden;
 }
 h1 {
   text-align: center;
   color: aliceblue;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  font-weight: 600;
 }
 
 .drum-button {
   background: rgba(219, 127, 88, 0.7);
   border: 2px solid #333;
-  border-radius: 10px;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
   padding: 5px;
   cursor: pointer;
-  transition: background 0.3s, transform 0-2s;
-  position: absolute;
+  transition: all 0.3s, ease-in-out;
+  /* position: absolute; */
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
 }
 .drum-button:hover {
   background: #ffcc00;
-  transform: scale(1.05);
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+.drum-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.drum-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.5);
+}
+.drum-button:before {
+  content: attr(data-key);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
